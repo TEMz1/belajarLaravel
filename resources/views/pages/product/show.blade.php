@@ -5,11 +5,11 @@
     <hr>
     <a href="/product/tambah" type="button" class="btn btn-primary mb-3">Tambah Data</a>
     <div class="alert alert-primary">
-        <b>Nama Toko : </b> {{$nama_toko}}
+        <b>Nama Toko : </b> {{$data_toko['nama_toko']}}
         <br>
-        <b>Alamat : </b> {{$alamat}}
+        <b>Alamat : </b> {{$data_toko['alamat']}}
         <br>
-        <b>Tipe Toko : </b> {{$tipe}}
+        <b>Tipe Toko : </b> {{$data_toko['tipe']}}
     </div>
     <div class="card">
         <div class="card-body">
@@ -21,32 +21,32 @@
     <tr>
       <th scope="col">No</th>
       <th scope="col">Nama Product</th>
-      <th scope="col">Stock</th>
       <th scope="col">Harga</th>
+      <th scope="col">Deskripsi Produk</th>
       <th scope="col">Aksi</th>
     </tr>
   </thead>
   <tbody>
+    @foreach ($data_produk as $item)
     <tr>
-      <th scope="row">1</th>
-      <td>Laptop Victus 15</td>
-      <td>11</td>
-      <td>11000000</td>
-      <td>
-        <button type="button" class="btn btn-danger">Hapus</button>
-        <button type="button" class="btn btn-warning">Edit</button>
-      </td>
+        <th scope="row">
+            {{$loop->iteration}}
+        </th>
+        <td>
+            {{$item->nama_produk}}
+        </td>
+        <td>
+            {{$item->harga}}
+        </td>
+        <td>
+            {{$item->deskripsi_produk}}
+        </td>
+        <td>
+            <button type="button" class="btn btn-danger">Hapus</button>
+            <button type="button" class="btn btn-warning">Edit</button>
+        </td>
     </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td>Laptop Victus 15</td>
-      <td>11</td>
-      <td>11000000</td>
-      <td>
-        <button type="button" class="btn btn-danger">Hapus</button>
-        <button type="button" class="btn btn-warning">Edit</button>
-      </td>
-    </tr>
+    @endforeach
 
   </tbody>
 </table>

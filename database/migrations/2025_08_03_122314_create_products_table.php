@@ -11,8 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->id();
+        // sintaks dibawah untuk membuat table product
+        Schema::create('tb_products', function (Blueprint $table) {
+            $table->id('id_produk'); // defaultnya 'id'
+            $table->string('nama_produk', 150); // default laravel 255
+            $table->integer('harga');
+            $table->text('deskripsi_produk');
+            $table->integer('id_kategori');
             $table->timestamps();
         });
     }

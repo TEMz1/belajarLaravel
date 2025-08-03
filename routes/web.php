@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('pages.beranda');
 });
 
-Route::get('/product',[ProductController::class,'getProduct'] );
+Route::get('/product',[ProductController::class,'index'] );
 Route::get('/product/tambah',[ProductController::class,'addProduct'] );
 
 Route::get('/about', function () {
