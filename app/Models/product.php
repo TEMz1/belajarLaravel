@@ -16,5 +16,5 @@ class product extends Model
     // protected $fillLable = ['nama_produk', 'harga'. 'stok'];
 
     // inisialisasi data yang tidak bisa diisi / diubah
-    protected $guarder =['id_produk'];
+    protected $guarded =['id_produk'];
 }
